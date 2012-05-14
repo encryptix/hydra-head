@@ -5,6 +5,8 @@ require 'cancan'
 # Hydra libraries
 module Hydra
   extend Blacklight::GlobalConfigurable
+  # Naomi sez:  Autoload is not thread-safe and will be removed in ruby 3.0
+  #   http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/41149
   extend ActiveSupport::Autoload
   autoload :AccessControlsEvaluation
   autoload :AccessControlsEnforcement
@@ -16,8 +18,6 @@ module Hydra
   autoload :GenericImage
   autoload :GenericUserAttributes
   autoload :ModelMixins
-  autoload :ModsGenericContent
-  autoload :ModsImage
   autoload :RepositoryController
   autoload :SubmissionWorkflow
   autoload :SuperuserAttributes
@@ -26,13 +26,7 @@ module Hydra
   autoload :Workflow
 end
 
-
-
 require 'hydra/assets_controller_helper'
 require 'hydra/file_assets_helper'
-require 'hydra/common_mods_index_methods'
 require 'hydra/model_methods'
 require 'hydra/models/file_asset'
-#require 'mediashelf/active_fedora_helper' #deprecated
-
-
