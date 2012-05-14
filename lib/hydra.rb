@@ -30,8 +30,6 @@ end
 
 require 'hydra/assets_controller_helper'
 require 'hydra/file_assets_helper'
-
-require 'hydra/rights_metadata'
 require 'hydra/common_mods_index_methods'
 require 'hydra/model_methods'
 require 'hydra/models/file_asset'
